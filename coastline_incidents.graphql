@@ -1,0 +1,17 @@
+query incident_locations @cached(ttl: 300, refresh: false) {
+  incident_survey(where: {incident: {location_id: {_is_null: false}}}, order_by: {started_at: asc}) {
+    id
+    description
+    incident {
+      data_source {
+        name
+      }
+      location {
+        id
+        name
+        center
+      }
+      occured_at
+    }
+  }
+}
