@@ -1,15 +1,10 @@
 #! /bin/bash
 
-set -ex
-TMP=$(mktemp -d)
-cd "${TMP}" || exit
+REPOSITORY=$PWD/repo
+rm -rf "$REPOSITORY"
 
-git clone https://github.com/Enigma-Labs/explore-coastlines.git .
+git clone https://github.com/Enigma-Labs/explore-coastlines.git "${REPOSITORY}"
 
-find . -depth 1 -type f | xargs -I _ mv _ /content/
-mv scripts/* /content/scripts/
-
-cd /content/ || exit
-
-./scripts/get-data.sh
+./repo/scripts/get-data.sh
+mv -f "$REPOSITORY"/* /content/
 pip3 install -r requirements.txt
