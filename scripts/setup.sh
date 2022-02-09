@@ -10,4 +10,7 @@ git clone https://github.com/Enigma-Labs/explore-coastlines.git "$REPOSITORY"
 
 mv -f "$REPOSITORY"/* /content/
 
-pip3 install -r requirements.txt
+wget https://repo.anaconda.com/miniconda/Miniconda3-py38_4.10.3-Linux-x86_64.sh
+$SHELL Miniconda3-py38_4.10.3-Linux-x86_64.sh 
+
+conda env create -f environment.yml
