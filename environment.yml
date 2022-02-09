@@ -1,4 +1,4 @@
-name: test-env-with-builds
+name: coastline-env
 channels:
   - conda-forge
   - defaults
@@ -227,4 +227,4 @@ dependencies:
     - ray==1.10.0
     - redis==4.1.3
     - wrapt==1.13.3
-prefix: /home/i/miniconda3/envs/test-env-with-builds
+prefix: /home/i/miniconda3/envs/coastline-env

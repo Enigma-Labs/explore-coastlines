@@ -8,18 +8,12 @@ docker run -v $PWD/app enigmalabs/coastline
 ```
 
 ### Native
-```bash
-# MacOS
-brew install virtualenv gdal
-# Debian/Ubuntu
-apt-get install -yy libgdal-dev libgeos-dev python3-dev python3-rtree
+```
+Download and install Minicoda https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html
 
-# activate virtualenv
-virtualenv -p $(which python3) --system-site-packages .venv/
-source .venv/bin/activate
-
-# install requirements
-pip install -r requirements.txt
+# create conda env
+conda env create -f environment.yml
+conda activate coastline-env
 ```
 
 ### GQL JWT Auth
